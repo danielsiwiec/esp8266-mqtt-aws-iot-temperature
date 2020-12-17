@@ -1,0 +1,19 @@
+# Python virtual env
+.venv/
+
+# VS Code
+.vscode/
+
+# Firmware files
+*.bin
+
+# Terraform state
+.terraform
+*tfstate*
+
+# Certificates
+*.der
+*.pem
+
+# Generated props
+app/props.json
