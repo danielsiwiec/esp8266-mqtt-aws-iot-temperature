@@ -19,5 +19,4 @@ props:
 	cd ..
 
 upload: props
-	rshell -p $(PORT) --quiet cp app/* /pyboard/ && \
-	esptool.py --port $(PORT) --after soft_reset flash_id
+	rshell -p $(PORT) --quiet cp app/* /pyboard/
