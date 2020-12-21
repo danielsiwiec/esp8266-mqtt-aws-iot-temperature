@@ -1,6 +1,6 @@
 resource "aws_iot_topic_rule" "temp_analytics" {
   name        = "temp_analytics"
-  description = "Send temp to IoT Analytics"
+  description = "Send temperature readings to DynamoDB"
   enabled     = true
   sql         = "SELECT *, timestamp() as timestamp FROM 'tempReading/bedroom'"
   sql_version = "2016-03-23"
