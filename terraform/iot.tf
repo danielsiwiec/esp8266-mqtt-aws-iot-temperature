@@ -16,21 +16,10 @@ data "aws_iot_endpoint" "endpoint" {}
 data "aws_iam_policy_document" "publishTemp" {
   statement {
     actions = [
-      "iot:Publish",
-      "iot:Receive"
+      "iot:Publish"
     ]
     resources = [
       "arn:aws:iot:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:topic/tempReading/*"
-    ]
-    effect = "Allow"
-  }
-
-  statement {
-    actions = [
-      "iot:Subscribe"
-    ]
-    resources = [
-      "arn:aws:iot:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:topicfilter/tempReading/*"
     ]
     effect = "Allow"
   }
