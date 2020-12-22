@@ -28,4 +28,15 @@ All hardware components necessary for this project add up to around $30.
 
 - Python 3.x
 - terraform
+- jq
 - AWS account
+
+## Set up
+
+Create a Python virtual environment: `python -m venv .venv`
+
+Activate it: `source .venv/bin/activate`
+
+Upgrade pip: `pip install --upgrade pip`
+
+Install all dependencies: `pip install -r requirements.txt`
