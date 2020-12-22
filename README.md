@@ -1,5 +1,7 @@
 # ESP 8266 AWS IoT Temperature Sensor
 
+This is a companion codebase to [this](https://medium.com/dan-on-coding/building-an-iot-thermostat-with-esp8266-python-and-aws-6b0555326dbe) medium article.
+
 This project creates an IoT Temperature sensor sending data to AWS for processing. In the end it produces a graph like this:
 
 ![](./assets/temp_graph.png)
