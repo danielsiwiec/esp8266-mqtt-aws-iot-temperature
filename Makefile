@@ -6,9 +6,9 @@ provision:
 	cd ..
 
 flash:
-	wget -N https://micropython.org/resources/firmware/esp8266-20200911-v1.13.bin && \
-	esptool.py --port $(PORT) erase_flash && \
-	esptool.py --port $(PORT) --baud 921600 write_flash --flash_size=detect 0 esp8266-20200911-v1.13.bin
+	wget -N https://micropython.org/resources/firmware/esp32-idf3-20200902-v1.13.bin && \
+	esptool.py --chip esp32 --port $(PORT) erase_flash && \
+	esptool.py --chip esp32 --port $(PORT) --baud 921600 write_flash --flash_size=detect -z 0x1000 esp32-idf3-20200902-v1.13.bin
 
 props:
 	cd terraform && \

@@ -1,10 +1,12 @@
 import time
 import math
-import machine
+from machine import Pin, ADC
+
 
 class Thermistor:
     def __init__(self):
-        self.analog = machine.ADC(0)
+        self.analog = ADC(Pin(34))
+        self.analog.atten(ADC.ATTN_11DB)
 
     def _get_analog_with_sleep(self, sleep):
         time.sleep_ms(100)
@@ -19,8 +21,8 @@ class Thermistor:
         steinhart += 1.0 / (To + 273.15)         # log(R/Ro) / beta + 1/To
         steinhart = (1.0 / steinhart) - 273.15   # Invert, convert to C
         return steinhart
-    
-    def _get_thermistor_resistance(self, Rnom = 10000, adc_resolution=1023):
+
+    def _get_thermistor_resistance(self, Rnom=10000, adc_resolution=4095):
         return Rnom / (adc_resolution/self._get_analog() - 1)
 
     def _c_to_f(self, c):
