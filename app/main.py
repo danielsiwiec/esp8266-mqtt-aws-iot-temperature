@@ -6,9 +6,10 @@ from sleep import deep_sleep_seconds
 
 
 props = load_props()
-connect_to_wifi(props['wifi_sid'], props['wifi_pass'])
-thermistor = Thermistor()
 mqtt = MQTT(props['client_id'], props['iot_endpoint'], props['iot_topic'])
+thermistor = Thermistor()
+
+connect_to_wifi(props['wifi_sid'], props['wifi_pass'])
 
 while True:
     temp = thermistor.get_temp()
